@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+        <!--mysql的jar文件路径-->
+        <classPathEntry location="C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-java-8.0.15.jar"/>
+        <context id="Mysql" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!--数据库相关配置-->
+        <jdbcConnection driverClass ="com.mysql.cj.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/melody?serverTimezone=GMT%2B8"
+                        userId="root" password="root">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+        <!--配置pojo目录-->
+        <javaModelGenerator targetPackage="com.example.wx.entity" targetProject="src/main/java">
+        <property name="enableSubPackages" value="true"/>
+         </javaModelGenerator>
+
+            <!--配置xml映射目录-->
+            <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+            </sqlMapGenerator>
+
+            <!--配置dao目录-->
+            <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.wx.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            </javaClientGenerator>
+
+            <!--tableName是数据库中的表名，domainObjectName是生成的JAVA模型名，后面的参数不用改，要生成更多的表就在下面继续加table标签-->
+            <table tableName="order_detail"
+            domainObjectName="OrderDetail"
+            enableCountByExample="false"
+            enableUpdateByExample="false"
+            enableDeleteByExample="false"
+            enableSelectByExample="false"
+            selectByExampleQueryId="false"/>
+
+
+            <table tableName="order_master"
+                   domainObjectName="OrderMaster"
+                   enableCountByExample="false"
+                   enableUpdateByExample="false"
+                   enableDeleteByExample="false"
+                   enableSelectByExample="false"
+                   selectByExampleQueryId="false"/>
+
+<!--            <table tableName="order_detail"-->
+<!--            domainObjectName="OrderDetail"-->
+<!--            enableCountByExample="false"-->
+<!--            enableUpdateByExample="false"-->
+<!--            enableDeleteByExample="false"-->
+<!--            enableSelectByExample="false"-->
+<!--            selectByExampleQueryId="false"/>-->
+
+<!--            <table tableName="order_master"-->
+<!--                   domainObjectName="OrderMaster"-->
+<!--                   enableCountByExample="false"-->
+<!--                   enableUpdateByExample="false"-->
+<!--                   enableDeleteByExample="false"-->
+<!--                   enableSelectByExample="false"-->
+<!--                   selectByExampleQueryId="false"/>-->
+
+
+
+<!--            <table tableName="user_info"-->
+<!--                   domainObjectName="UserInfo"-->
+<!--                   enableCountByExample="false"-->
+<!--                   enableUpdateByExample="false"-->
+<!--                   enableDeleteByExample="false"-->
+<!--                   enableSelectByExample="false"-->
+<!--                   selectByExampleQueryId="false"/>-->
+
+
+<!--            <table tableName="wechat_auth"-->
+<!--                   domainObjectName="WechatAuth"-->
+<!--                   enableCountByExample="false"-->
+<!--                   enableUpdateByExample="false"-->
+<!--                   enableDeleteByExample="false"-->
+<!--                   enableSelectByExample="false"-->
+<!--                   selectByExampleQueryId="false"/>-->
+
+<!--            <table tableName="local_auth"-->
+<!--                   domainObjectName="LocalAuth"-->
+<!--                   enableCountByExample="false"-->
+<!--                   enableUpdateByExample="false"-->
+<!--                   enableDeleteByExample="false"-->
+<!--                   enableSelectByExample="false"-->
+<!--                   selectByExampleQueryId="false"/>-->
+
+
+             </context>
+
+    </generatorConfiguration>
+
